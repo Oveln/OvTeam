@@ -1,0 +1,16 @@
+teamNum: 2
+teams:
+  1:
+    name: "蓝队"
+    prefix: "[%teamname%] "
+    color: "1"
+    players:
+      - "A"
+      - "B"
+      - "Oveln"
+  2:
+    name: "红队"
+    color: "4"
+    players:
+      - "C"
+      - "D"
