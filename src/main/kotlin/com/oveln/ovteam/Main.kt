@@ -10,10 +10,15 @@ class Main: JavaPlugin() {
         lateinit var Instance : Main
     }
     override fun onEnable() {
-        saveDefaultConfig()
         Instance = this
+        saveDefaultConfig()
+
+        getCommand("ovteam")?.setExecutor(OvTeamCommand())
+
         Teams.load(config)
         PAPI.register()
+
+
         logger.info("${description.name} ${description.version} 启动成功   作者${description.authors}".colorful())
     }
 

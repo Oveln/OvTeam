@@ -6,9 +6,9 @@ import org.bukkit.configuration.ConfigurationSection
 import org.bukkit.scoreboard.Scoreboard
 
 class Team(teamFileData: ConfigurationSection, scoreboard: Scoreboard, playerdata: MutableMap<String, Int>, id: Int) {
-    var name = teamFileData.getString("name")?:""
-    private var colorCode = teamFileData.getString("color")?.get(0)
-    private var players: MutableList<String> = teamFileData.getStringList("players")
+    val name = teamFileData.getString("name")?:""
+    val colorCode = (teamFileData.getString("color")?.get(0))?:'f'
+    private val players: MutableList<String> = teamFileData.getStringList("players")
     val size: Int
         get() = players.size
 
@@ -26,7 +26,7 @@ class Team(teamFileData: ConfigurationSection, scoreboard: Scoreboard, playerdat
         teamFileData.getString("prefix")?.let {
             team.prefix = it.replace("%teamname%", name)
         }
-        ChatColor.getByChar(colorCode?:Char(0))?.let {
+        ChatColor.getByChar(colorCode)?.let {
             team.color = it
         }
         players.forEach() {

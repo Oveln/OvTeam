@@ -1,7 +1,13 @@
 name: OvTeam
 main: com.oveln.ovteam.Main
-version: 1.0
+version: 1.1
 author: Oveln
 api-version: "1.16"
+commands:
+  ovteam:
+    description: OvTeam command
+    usage: /<command>
+    permission: ovteam.*
+    permission-message: 你没有权限执行这个命令
 depend:
   - PlaceholderAPI
